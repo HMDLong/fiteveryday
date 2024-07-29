@@ -1,3 +1,5 @@
+import 'package:fiteveryday/features/home/screen/today_train_sect.dart';
+import 'package:fiteveryday/features/home/screen/user_greeting_sect.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -11,17 +13,13 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
+    return const Scaffold(
+      body: SingleChildScrollView(
         child: Column(
           children: [
-            Text("home"),
-            ElevatedButton(
-              onPressed: () {
-                context.go("/exercise");
-              },
-              child: Text("to excercise"),
-            )
+            UserGreetingSection(),
+            SizedBox(height: 12),
+            TodayExerciseSection(),
           ],
         ),
       ),
