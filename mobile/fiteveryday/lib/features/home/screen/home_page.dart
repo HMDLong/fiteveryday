@@ -13,15 +13,40 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            UserGreetingSection(),
-            SizedBox(height: 12),
-            TodayExerciseSection(),
-          ],
-        ),
+    return Scaffold(
+      body: CustomScrollView(
+        physics: BouncingScrollPhysics(),
+        slivers: <Widget>[
+          SliverAppBar(
+            pinned: true,
+            expandedHeight: 160,
+            flexibleSpace: FlexibleSpaceBar(
+              title: const Text("abcd"),
+              background: Container(
+                decoration: BoxDecoration(
+                  color: Colors.blue,
+                ),
+              ),
+            ),
+          ),
+          SliverList.builder(
+            itemCount: 10,
+            itemBuilder: (context, i) {
+              return SizedBox(
+                height: 60,
+                width: double.infinity,
+                child: Card(
+                  child: Text("$i"),
+                ),
+              );
+            },
+          ),
+          const SliverToBoxAdapter(
+            child: SizedBox(
+              height: 100,
+            ),
+          )
+        ],
       ),
     );
   }

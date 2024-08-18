@@ -1,6 +1,6 @@
 import 'package:fiteveryday/routing.dart';
-import 'package:fiteveryday/utils/string.dart';
-import 'package:fiteveryday/utils/theme.dart';
+import 'package:fiteveryday/common/utils/string.dart';
+import 'package:fiteveryday/common/utils/theme.dart';
 import 'package:flutter/material.dart';
 
 void main() {

@@ -1,6 +1,7 @@
 import 'package:fiteveryday/features/auth/screen/login_page.dart';
 import 'package:fiteveryday/features/exercises/screens/exercise_page.dart';
 import 'package:fiteveryday/features/home/screen/home_page.dart';
+import 'package:fiteveryday/features/plan/screen/plan_page.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:persistent_bottom_nav_bar_v2/persistent_bottom_nav_bar_v2.dart';
@@ -21,13 +22,19 @@ final goRouter = GoRouter(
                 PersistentRouterTabConfig(
                   item: ItemConfig(
                     icon: const Icon(Icons.home),
-                    title: "page1",
+                    title: "Home",
+                  ),
+                ),
+                PersistentRouterTabConfig(
+                  item: ItemConfig(
+                    icon: const Icon(Icons.calendar_month_rounded),
+                    title: "Plan",
                   ),
                 ),
                 PersistentRouterTabConfig(
                   item: ItemConfig(
                     icon: const Icon(Icons.home),
-                    title: "page2",
+                    title: "Me",
                   ),
                 ),
               ],
@@ -42,6 +49,16 @@ final goRouter = GoRouter(
                   path: "home",
                   builder: (context, state) {
                     return const HomePage();
+                  },
+                ),
+              ],
+            ),
+            StatefulShellBranch(
+              routes: <RouteBase>[
+                GoRoute(
+                  path: "plan",
+                  builder: (context, state) {
+                    return const PlanPage();
                   },
                 ),
               ],
