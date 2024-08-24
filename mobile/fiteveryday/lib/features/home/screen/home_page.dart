@@ -21,7 +21,14 @@ class _HomePageState extends State<HomePage> {
             pinned: true,
             expandedHeight: 160,
             flexibleSpace: FlexibleSpaceBar(
-              title: const Text("abcd"),
+              title: Column(
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Text("abc"),
+                  Text("xyz"),
+                ],
+              ),
               background: Container(
                 decoration: BoxDecoration(
                   color: Colors.blue,

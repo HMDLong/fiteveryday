@@ -2,6 +2,8 @@ import 'package:fiteveryday/features/auth/screen/login_page.dart';
 import 'package:fiteveryday/features/exercises/screens/exercise_page.dart';
 import 'package:fiteveryday/features/home/screen/home_page.dart';
 import 'package:fiteveryday/features/plan/screen/plan_page.dart';
+import 'package:fiteveryday/features/report/screens/report_page.dart';
+import 'package:fiteveryday/features/splash/splash_page.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:persistent_bottom_nav_bar_v2/persistent_bottom_nav_bar_v2.dart';
@@ -12,7 +14,7 @@ final goRouter = GoRouter(
       // base route for login
       path: "/",
       builder: (context, state) {
-        return const LoginPage();
+        return const SplashPage();
       },
       routes: [
         StatefulShellRoute.indexedStack(
@@ -23,6 +25,12 @@ final goRouter = GoRouter(
                   item: ItemConfig(
                     icon: const Icon(Icons.home),
                     title: "Home",
+                  ),
+                ),
+                PersistentRouterTabConfig(
+                  item: ItemConfig(
+                    icon: const Icon(Icons.home),
+                    title: "Report",
                   ),
                 ),
                 PersistentRouterTabConfig(
@@ -59,6 +67,16 @@ final goRouter = GoRouter(
                   path: "plan",
                   builder: (context, state) {
                     return const PlanPage();
+                  },
+                ),
+              ],
+            ),
+            StatefulShellBranch(
+              routes: <RouteBase>[
+                GoRoute(
+                  path: "report",
+                  builder: (context, state) {
+                    return const ReportPage();
                   },
                 ),
               ],

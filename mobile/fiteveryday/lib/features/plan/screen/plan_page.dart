@@ -26,16 +26,16 @@ class _PlanPageState extends State<PlanPage> {
         padding: EdgeInsets.all(8.0),
         child: Column(
           children: [
-            Expanded(
-              flex: 3,
-              child: SizedBox(
-                width: double.infinity,
-                child: CarouselSlider(
-                  items: getCarouselItems(),
-                  options: CarouselOptions(),
-                ),
-              ),
-            ),
+            // Expanded(
+            //   flex: 3,
+            //   child: SizedBox(
+            //     width: double.infinity,
+            //     child: CarouselSlider(
+            //       items: getCarouselItems(),
+            //       options: CarouselOptions(),
+            //     ),
+            //   ),
+            // ),
             Expanded(
               flex: 7,
               child: SingleChildScrollView(

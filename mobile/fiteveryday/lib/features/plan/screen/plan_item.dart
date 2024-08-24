@@ -1,4 +1,4 @@
-import 'package:fiteveryday/widgets/rounded_button.dart';
+import 'package:fiteveryday/common/widgets/rounded_button.dart';
 import 'package:flutter/material.dart';
 
 class PlanItem extends StatelessWidget {
